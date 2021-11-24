@@ -4,7 +4,7 @@ import Text from './Text';
 //re run/re evaluation
 //text => name => 1
 //addAge => 11 vs 13 = fasle
-const ViewText = ({ text, addAge }) => {
+const ViewText = ({ text }) => {
   console.log('view text component');
   //print x2
 
@@ -22,7 +22,6 @@ const ViewText = ({ text, addAge }) => {
 
   return (
     <div className='box'>
-      <button onClick={addAge}>add Age</button>
       <p>the included text:</p>
       <Text>{text.name}</Text>
     </div>

@@ -17,16 +17,10 @@ function App() {
     return { name: 'kareem' };
   }, []);
 
-  //ageHandler => fn => 11
-  //ageHandler => fn => 13
-  const ageHandler = useCallback(() => {
-    console.log('age');
-  }, []);
-
   return (
     <div className='App'>
       <ViewCounter num={count} increaseCount={counterHandler} />
-      <ViewText text={name} addAge={ageHandler} />
+      <ViewText text={name} />
     </div>
   );
 
