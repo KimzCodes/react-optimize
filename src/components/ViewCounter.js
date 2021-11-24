@@ -1,8 +1,9 @@
 import React from 'react';
 
+//re run /re evaluation
 const ViewCounter = ({ num, increaseCount }) => {
   console.log('view counter component');
-  //run console log
+  //print x2
 
   return (
     <div className='box'>
