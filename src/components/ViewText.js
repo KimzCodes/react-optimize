@@ -25,6 +25,7 @@ const ViewText = ({ text, addAge }) => {
       <button onClick={addAge}>add Age</button>
       <p>the included text:</p>
       <Text>{text.name}</Text>
+      <Text>{text.age}</Text>
     </div>
   );
 };

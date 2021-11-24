@@ -5,22 +5,30 @@ import ViewText from './components/ViewText';
 //re run / re evaluation
 function App() {
   const [count, setCount] = useState(0);
+  const [user, setUser] = useState({ name: 'kareem' });
 
-  //counterHandler => fn => 11
-  //counterHandler => fn => 12
+  //counterHandler => fn => 1
+  //counterHandler => fn => 30
   const counterHandler = () => {
     setCount((prev) => prev + 1);
   };
 
-  //name => obj => kareem => 1
-  const name = useMemo(() => {
-    return { name: 'kareem' };
-  }, []);
+  //name => obj => 12
+  //name => obj => 15
 
-  //ageHandler => fn => 11
-  //ageHandler => fn => 13
+  const name = useMemo(() => {
+    return user;
+  }, [user]);
+
+  //ageHandler => fn => 20
   const ageHandler = useCallback(() => {
-    console.log('age');
+    setUser((prev) => {
+      if (prev.age) {
+        return prev;
+      } else {
+        return { ...prev, age: 30 };
+      }
+    });
   }, []);
 
   return (
