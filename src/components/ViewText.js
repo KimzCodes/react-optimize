@@ -21,7 +21,7 @@ const ViewText = ({ text }) => {
   return (
     <div className='box'>
       <p>the included text:</p>
-      <Text>{text.name}</Text>
+      <Text>{text}</Text>
     </div>
   );
 };

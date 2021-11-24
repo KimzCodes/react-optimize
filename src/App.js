@@ -5,9 +5,6 @@ import ViewText from './components/ViewText';
 //re run / re evaluation
 function App() {
   const [count, setCount] = useState(0);
-  const name = useMemo(() => {
-    return { name: 'kareem' };
-  }, []);
 
   const counterHandler = () => {
     setCount((prev) => prev + 1);
@@ -16,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       <ViewCounter num={count} increaseCount={counterHandler} />
-      <ViewText text={name} />
+      <ViewText />
     </div>
   );
 
