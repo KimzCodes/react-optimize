@@ -1,20 +1,25 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import ViewCounter from "./components/ViewCounter";
 import ViewText from "./components/ViewText";
 
 function App() {
   const [counter, setCounter] = useState(0); //new value
+  const [counterTwo, setCounterTwo] = useState(0);
   const [isRerender, setIsRerender] = useState(false);
-
-  const counterHandler = () => {
-    setCounter((prev) => prev + 1); //rffn2
-  };
 
   useEffect(() => {
     if (counter > 3) {
       setIsRerender(true);
     }
   }, [counter]);
+
+  const counterHandler = useCallback(() => {
+    setCounter((prev) => prev + 1); //rffn1
+  }, []);
+
+  const textHandler = useCallback(() => {
+    setCounterTwo((prev) => prev + 1); //rffn1
+  }, []);
 
   const styles = useMemo(() => {
     if (isRerender) {
@@ -26,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <ViewCounter counterHandler={counterHandler} counter={counter} />
-      <ViewText style={styles} />
+      <ViewText style={styles} textHandler={textHandler} />
     </div>
   );
 }

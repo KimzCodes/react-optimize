@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 
 //re run /re evaluation
 const ViewCounter = ({ counterHandler, counter }) => {
@@ -12,4 +12,4 @@ const ViewCounter = ({ counterHandler, counter }) => {
   );
 };
 
-export default ViewCounter;
+export default memo(ViewCounter);
