@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Text = ({ children }) => {
-  console.log(' text component');
+  console.log(" text component");
 
-  let text = children ? children : 'no text';
+  let text = children.name ? children.name : "no text";
   return <div>{text}</div>;
 };
 
