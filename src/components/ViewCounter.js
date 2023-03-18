@@ -1,14 +1,13 @@
 import React from "react";
 
 //re run /re evaluation
-const ViewCounter = () => {
-  console.log("view counter component2");
-  //print x2
+const ViewCounter = ({ counterHandler, counter }) => {
+  console.log("view counter ");
 
   return (
     <div className="box">
-      <p>1</p>
-      <button>Increase</button>
+      <p>{counter}</p>
+      <button onClick={counterHandler}>Increase</button>
     </div>
   );
 };

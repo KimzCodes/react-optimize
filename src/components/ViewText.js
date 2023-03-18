@@ -1,8 +1,7 @@
-import React from "react";
+import { memo } from "react";
 import Text from "./Text";
 
-//re run/re evaluation
-const ViewText = ({ text, changeName }) => {
+const ViewText = ({ style }) => {
   const apiConnect = () => {
     for (let i = 0; i <= 500_000_000; i++) {}
     console.log("api called");
@@ -10,13 +9,15 @@ const ViewText = ({ text, changeName }) => {
 
   apiConnect();
 
+  console.log("view text", style);
+
   return (
     <div className="box">
       <p>the included text:</p>
-      <button onClick={changeName}>Click me please</button>
-      <Text>{text}</Text>
+
+      <Text>kareem</Text>
     </div>
   );
 };
 
-export default ViewText; //rf1 !== rf2
+export default memo(ViewText);
